@@ -1,0 +1,12 @@
+{% extends "admin/change_form.html" %}
+{% load i18n %}
+
+{% block submit_buttons_bottom %}
+    <!-- <div class="submit-row">
+        <a class="related-widget-wrapper-link add-related" id="add_id_quest" href="/admin/test_app/answer/add/?_to_field=id&amp;_popup=1" title="Add another question"><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a>
+    <a class="addlink" href="/admin/test_app/answer/add/"></a>
+       <input type="button" value="{% trans 'Another Button' %}" name="_anotherbutton" />
+    </div> -->
+
+    {{ block.super }}
+{% endblock %}

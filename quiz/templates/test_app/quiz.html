@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="question">
+
+<h6>{{ progress }}</h6>
+
+        <h2>{{ question }}</h2>
+
+</div>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        {% if choice1 %}
+        <div class="input-group">
+            <div class="input-group-prepend">
+            <div class="input-group-text">
+                <input type="checkbox" name="1" aria-label="Checkbox for following text input">
+            </div>
+            </div>
+            <input type="text" class="form-control" value="{{choice1.ans_1}}" disabled>
+        </div>
+        {% endif %}
+        {% if choice2 %}
+        <div class="input-group">
+            <div class="input-group-prepend">
+            <div class="input-group-text">
+                <input type="checkbox" name="2" aria-label="Checkbox for following text input">
+            </div>
+            </div>
+            <input type="text" class="form-control" value="{{choice2.ans_2}}" disabled>
+        </div>
+        {% endif %}
+        {% if choice3 %}
+        <div class="input-group">
+            <div class="input-group-prepend">
+            <div class="input-group-text">
+                <input type="checkbox" name="3" aria-label="Checkbox for following text input">
+            </div>
+            </div>
+            <input type="text" class="form-control" value="{{choice3.ans_3}}" disabled>
+        </div>
+        {% endif %}
+        {% if choice4 %}
+        <div class="input-group">
+            <div class="input-group-prepend">
+            <div class="input-group-text">
+                <input type="checkbox" name="4" aria-label="Checkbox for following text input">
+            </div>
+            </div>
+            <input type="text" class="form-control" value="{{choice4.ans_4}}" disabled>
+        </div>
+        {% endif %}
+        {% if choice5 %}
+        <div class="input-group">
+            <div class="input-group-prepend">
+            <div class="input-group-text">
+                <input type="checkbox" name="5" aria-label="Checkbox for following text input">
+            </div>
+            </div>
+            <input type="text" class="form-control" value="{{choice5.ans_5}}" disabled>
+        </div>
+        {% endif %}
+
+    </div>
+    <button type="submit" id='check_ans' class="btn btn-block btn-success submit-btn" disabled>Submit</button>
+</form>
+<script src="{% static 'js/quiz.js' %}"></script>
+{% endblock %}

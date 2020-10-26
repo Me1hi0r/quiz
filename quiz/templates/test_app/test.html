@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {{num_visits}}
+    {% if tests %}
+        <h2>Welcome. You can select a test.</h2>
+        <h5>Be careful, you have limited attempts for each test.</h5>
+        {% for test in tests %}
+        <a href="/test/solve/{{test.pk}}" class="btn btn-block btn-outline-info" role="button">{{test.test_name}}</a>
+        {% endfor %}
+    {% else %}
+        <h2>Unfortunately, tests are not available at this time, please contact your <a href="/admin" >administrator</a></h2>
+    {% endif %}
+
+{% endblock %}
